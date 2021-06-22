@@ -1,0 +1,80 @@
+html{
+	min-width:100%; min-height:100%;
+}
+body{
+	margin:0 auto;
+	background-color:#1d1f21;
+	width:100%;
+	font-family: 'Questrial', sans-serif;
+}
+#game{
+	position:relative;
+	margin:auto;
+	margin-top:4%;
+	width:896px;
+	height:504px;
+}
+
+::-webkit-scrollbar {
+  width: 7px; 
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px #2A2A2A; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 10px;
+}
+#chat::-webkit-scrollbar {
+  width: 15px; 
+}
+#chat::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+#chat::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 10px;
+}
+
+#left{
+    height:100%;
+    width:50%;
+    background-image:url(../img/basic/left.png);
+    background-size:cover;
+    position:relative;
+    float:left
+}
+#right{
+    height:100%;
+    width:50%;
+    position:relative;
+    float:left
+}
+#chat{
+    height:95.3px;
+    width:100%;
+    position:absolute;
+    overflow-y:auto;
+    overflow-x:hidden;
+    z-index:1;
+    cursor:default
+}
+#widz{
+    pointer-events:none;
+    margin-left:4px;
+    font-size:11px;
+    color:white;
+    display:block;
+    height:17px;
+    width:100%;
+    position:absolute;
+    margin-top:97.3px;
+    z-index:1;
+    cursor:default
+}
+.abs100{
+    width:100%;
+    position:absolute;
+}
