@@ -1,3 +1,4 @@
+imgPath = 'img/'
 document.ondragstart = function() { return false; };
 document.onselectstart = function() { return false; };
 game=document.getElementById("game");
@@ -13,10 +14,10 @@ mruganie=setInterval(mrugaj, 4000); m_i=1; mruganie_a=false;
 function mrugaj(){
 	if(m_i<8){
 		if(m_i==1) mruganie_a=setInterval(mrugaj,60);
-		glowa.src="img/mruganie/"+m_i+".png";
+		glowa.src=imgPath+"mruganie/"+m_i+".png";
 		m_i++;
 	}else{
-		glowa.src="img/mruganie/1.png";
+		glowa.src=imgPath+"mruganie/1.png";
 		clearInterval(mruganie_a); mruganie_a=false;
 		m_i=1;
 	}
@@ -24,10 +25,10 @@ function mrugaj(){
 function mrugaj_min(){
 	if(m_i<9){
 		if(m_i==1) mruganie_a=setInterval(mrugaj_min,100);
-		glowa.src="img/mruganie_min/"+m_i+".png";
+		glowa.src=imgPath+"mruganie_min/"+m_i+".png";
 		m_i++;
 	}else{
-		glowa.src="img/mruganie_min/1.png";
+		glowa.src=imgPath+"mruganie_min/1.png";
 		clearInterval(mruganie_a); mruganie_a=false;
 		m_i=1;
 	}
@@ -48,7 +49,7 @@ right.onmousemove = function(event){
 		if(stan==1){ jaka_reka="_max"; maxminus=10; }
 		if(stan==3) jaka_reka="_min"
 		if(11-Math.ceil((x_h+plusl)/44.8)!=prawa[0]&&(x_h+plusl)>0){
-			reka.src="img/reka"+jaka_reka+"/"+(11-Math.ceil((x_h+plusl)/44.8))+".png"; prawa[0]=11-Math.ceil((x_h+plusl)/44.8); }
+			reka.src=imgPath+"reka"+jaka_reka+"/"+(11-Math.ceil((x_h+plusl)/44.8))+".png"; prawa[0]=11-Math.ceil((x_h+plusl)/44.8); }
 		if(11-Math.ceil((y_h+plusg)/50.4)!=prawa[1]&&(y_h+plusg)>0){
 			reka.style.marginTop=((11-Math.floor((y_h+plusg)/50.4))*1.4-maxminus)+"px"; prawa[1]=11-Math.ceil((y_h+plusg)/50.4);}
 	}
@@ -94,7 +95,7 @@ zakl.style.marginTop="462.7px";
 zakl.style.opacity=0.9;
 zakl.style.transition="opacity 500ms"; 
 zak1=zakl.cloneNode(true); zak2=zakl.cloneNode(true); zak3=zakl.cloneNode(true);
-zak1.src="img/basic/z1.png"; zak2.src="img/basic/z2.png"; zak3.src="img/basic/z3.png";
+zak1.src=imgPath+"basic/z1.png"; zak2.src=imgPath+"basic/z2.png"; zak3.src=imgPath+"basic/z3.png";
 zak2.style.marginLeft="75px"; zak3.style.marginLeft="150px";
 right.appendChild(zak3); right.appendChild(zak2); right.appendChild(zak1);
 
@@ -115,56 +116,56 @@ atlo=document.createElement("div"); atlo.style.position="absolute";
 atlo.style.backgroundSize="cover"; atlo.style.width="100%"; atlo.style.height="504px";
 atlo2=atlo.cloneNode(true);
 tlo=document.createElement("div"); tlo.style.position="absolute";
-tlo.style.backgroundImage="url(img/basic/right1.png)"; tlo.style.backgroundSize="cover";
+tlo.style.backgroundImage="url("+imgPath+"basic/right1.png)"; tlo.style.backgroundSize="cover";
 tlo.style.width="100%"; tlo.style.height="437.5px";
 tlo_d=document.createElement("div"); tlo_d.style.position="absolute";
-tlo_d.style.backgroundImage="url(img/basic/right1_.png)"; tlo_d.style.backgroundSize="cover";
+tlo_d.style.backgroundImage="url("+imgPath+"basic/right1_.png)"; tlo_d.style.backgroundSize="cover";
 tlo_d.style.width="100%"; tlo_d.style.height="66.5px"; tlo_d.style.marginTop="437.5px";
 tlo.style.pointerEvents="none"; tlo_d.style.pointerEvents="none";
 karma=document.createElement("img"); karma.style.position="absolute";
-karma.src="img/basic/karma.png"; karma.style.width="83.3px"; karma.style.height="59.5px";
+karma.src=imgPath+"basic/karma.png"; karma.style.width="83.3px"; karma.style.height="59.5px";
 karma.style.marginTop="437.5px"; karma.style.marginLeft="40.8%";
 karma.style.pointerEvents="none"; karma.style.transition='margin 500ms';
 		
 rec=document.createElement("img"); rec.style.position="absolute";
-rec.src='img/basic/rec.png'; rec.style.width="100%"; rec.style.height="437.5px";
+rec.src= imgPath+'basic/rec.png'; rec.style.width="100%"; rec.style.height="437.5px";
 rec.style.pointerEvents='none'; rec.style.opacity=0; rec.style.transition='opacity 100ms';
 		
 kot=document.createElement("img");
-kot.src="img/kot/1.png"; kot.style.pointerEvents="none";
+kot.src=imgPath+"kot/1.png"; kot.style.pointerEvents="none";
 kot.style.width="110.6px"; kot.style.height="177.1px";
 kot.style.marginLeft="40%"; kot.style.marginTop="55%";
 kot.style.position="absolute";
 		
 kot_amu=document.createElement("img");
 kot_amu.style.pointerEvents="none"; kot_amu.style.width="110.6px"; kot_amu.style.height="177.1px";
-kot_amu.src="img/basic/pusty.png"; kot_amu.style.marginTop="57%"; kot_amu.style.position="absolute";
+kot_amu.src=imgPath+"basic/pusty.png"; kot_amu.style.marginTop="57%"; kot_amu.style.position="absolute";
 kot_amu.style.marginLeft="39.5%"; kot_amu.style.transition='margin 500ms';
-puszka=document.createElement("img"); puszka.src="img/puszka/1.png"; puszka.style.position="absolute";
+puszka=document.createElement("img"); puszka.src=imgPath+"puszka/1.png"; puszka.style.position="absolute";
 
-buy_button=document.createElement("img"); buy_button.id="ign"; buy_button.src="img/z2/buy.png";
+buy_button=document.createElement("img"); buy_button.id="ign"; buy_button.src=imgPath+"z2/buy.png";
 buy_button.style.width="56px"; buy_button.style.height="16.1px"; buy_button.style.position="absolute";
 buy_button.style.marginLeft="131.5px";
 bu1=buy_button.cloneNode(true); bu2=buy_button.cloneNode(true); bu3=buy_button.cloneNode(true);
 bu1.style.marginTop="234.5px"; bu2.style.marginTop="324.5px"; bu3.style.marginTop="416.5px";
-bu1.onmouseover = function(){ if(bu1.src.includes("z2/buy")&&blok==0) bu1.src="img/z2/buy_hover.png" };
-bu1.onmouseout = function(){ if(bu1.src.includes("z2/buy")&&blok==0) bu1.src="img/z2/buy.png" };
-bu2.onmouseover = function(){ if(bu2.src.includes("z2/buy")&&blok==0) bu2.src="img/z2/buy_hover.png" };
-bu2.onmouseout = function(){ if(bu2.src.includes("z2/buy")&&blok==0) bu2.src="img/z2/buy.png" };
-bu3.onmouseover = function(){ if(bu3.src.includes("z2/buy")&&blok==0) bu3.src="img/z2/buy_hover.png" };
-bu3.onmouseout = function(){ if(bu3.src.includes("z2/buy")&&blok==0) bu3.src="img/z2/buy.png" };
+bu1.onmouseover = function(){ if(bu1.src.includes("z2/buy")&&blok==0) bu1.src=imgPath+"z2/buy_hover.png" };
+bu1.onmouseout = function(){ if(bu1.src.includes("z2/buy")&&blok==0) bu1.src=imgPath+"z2/buy.png" };
+bu2.onmouseover = function(){ if(bu2.src.includes("z2/buy")&&blok==0) bu2.src=imgPath+"z2/buy_hover.png" };
+bu2.onmouseout = function(){ if(bu2.src.includes("z2/buy")&&blok==0) bu2.src=imgPath+"z2/buy.png" };
+bu3.onmouseover = function(){ if(bu3.src.includes("z2/buy")&&blok==0) bu3.src=imgPath+"z2/buy_hover.png" };
+bu3.onmouseout = function(){ if(bu3.src.includes("z2/buy")&&blok==0) bu3.src=imgPath+"z2/buy.png" };
 
-buy_button=document.createElement("img"); buy_button.id="ign"; buy_button.src="img/z2/acquire.png";
+buy_button=document.createElement("img"); buy_button.id="ign"; buy_button.src=imgPath+"z2/acquire.png";
 buy_button.style.width="88.9px"; buy_button.style.height="25.9px"; buy_button.style.position="absolute";
 buy_button.style.marginLeft="131.5px";
 bup1=buy_button.cloneNode(true); bup2=buy_button.cloneNode(true); bup3=buy_button.cloneNode(true);
 bup1.style.marginTop="217.5px"; bup2.style.marginTop="308.5px"; bup3.style.marginTop="400.5px";
-bup1.onmouseover = function(){ if(bup1.src.includes("z2/acquire")&&blok==0) bup1.src="img/z2/acquire_hover.png" };
-bup1.onmouseout = function(){ if(bup1.src.includes("z2/acquire")&&blok==0) bup1.src="img/z2/acquire.png" };
-bup2.onmouseover = function(){ if(bup2.src.includes("z2/acquire")&&blok==0) bup2.src="img/z2/acquire_hover.png" };
-bup2.onmouseout = function(){ if(bup2.src.includes("z2/acquire")&&blok==0) bup2.src="img/z2/acquire.png" };
-bup3.onmouseover = function(){ if(bup3.src.includes("z2/acquire")&&blok==0) bup3.src="img/z2/acquire_hover.png" };
-bup3.onmouseout = function(){ if(bup3.src.includes("z2/acquire")&&blok==0) bup3.src="img/z2/acquire.png" };
+bup1.onmouseover = function(){ if(bup1.src.includes("z2/acquire")&&blok==0) bup1.src=imgPath+"z2/acquire_hover.png" };
+bup1.onmouseout = function(){ if(bup1.src.includes("z2/acquire")&&blok==0) bup1.src=imgPath+"z2/acquire.png" };
+bup2.onmouseover = function(){ if(bup2.src.includes("z2/acquire")&&blok==0) bup2.src=imgPath+"z2/acquire_hover.png" };
+bup2.onmouseout = function(){ if(bup2.src.includes("z2/acquire")&&blok==0) bup2.src=imgPath+"z2/acquire.png" };
+bup3.onmouseover = function(){ if(bup3.src.includes("z2/acquire")&&blok==0) bup3.src=imgPath+"z2/acquire_hover.png" };
+bup3.onmouseout = function(){ if(bup3.src.includes("z2/acquire")&&blok==0) bup3.src=imgPath+"z2/acquire.png" };
 
 oferta=document.createElement("div"); oferta.style.position="absolute"; oferta.style.backgroundSize="cover";
 oferta.style.width="100%"; oferta.style.height="84px"; oferta.style.pointerEvents="none";
@@ -186,71 +187,71 @@ eve_balans.style.textAlign="center"; eve_balans.style.color="#c59d88";
 eve_balans.style.marginTop="130.5px"; eve_balans.style.marginLeft="338.8px";
 
 eve_next=document.createElement("img"); eve_next.id="ign"; eve_next.style.width="59.5px";
-eve_next.style.height="14.7px"; eve_next.style.position="absolute"; eve_next.src="img/basic/pusty.png";
+eve_next.style.height="14.7px"; eve_next.style.position="absolute"; eve_next.src=imgPath+"basic/pusty.png";
 eve_next.style.marginTop="480px"; eve_next.style.marginLeft="378px";
 eve_prev=eve_next.cloneNode(true); eve_prev.style.width="82.6px"; eve_prev.style.marginTop="480.3px";
 eve_prev.style.height="14px"; eve_prev.style.marginLeft="288px";
-eve_next.onmouseover = function(){ if(eve_next.src.includes("img/z2/next.png")&&blok==0) eve_next.src="img/z2/next_hover.png"; }
-eve_next.onmouseout = function(){ if(eve_next.src.includes("img/z2/next_hover.png")&&blok==0) eve_next.src="img/z2/next.png"; }
-eve_prev.onmouseover = function(){ if(eve_prev.src.includes("img/z2/prev.png")&&blok==0) eve_prev.src="img/z2/prev_hover.png"; }
-eve_prev.onmouseout = function(){ if(eve_prev.src.includes("img/z2/prev_hover.png")&&blok==0) eve_prev.src="img/z2/prev.png"; }
-eve_next.onclick = function(){ if(eve_next.src.includes("img/z2/next")&&blok==0){ strona[0]++; usuwanie(2); zmiana(); }}; 
-eve_prev.onclick = function(){ if(eve_prev.src.includes("img/z2/prev")&&blok==0){ strona[0]--; usuwanie(2); zmiana(); }};
+eve_next.onmouseover = function(){ if(eve_next.src.includes(imgPath+"z2/next.png")&&blok==0) eve_next.src=imgPath+"z2/next_hover.png"; }
+eve_next.onmouseout = function(){ if(eve_next.src.includes(imgPath+"z2/next_hover.png")&&blok==0) eve_next.src=imgPath+"z2/next.png"; }
+eve_prev.onmouseover = function(){ if(eve_prev.src.includes(imgPath+"z2/prev.png")&&blok==0) eve_prev.src=imgPath+"z2/prev_hover.png"; }
+eve_prev.onmouseout = function(){ if(eve_prev.src.includes(imgPath+"z2/prev_hover.png")&&blok==0) eve_prev.src=imgPath+"z2/prev.png"; }
+eve_next.onclick = function(){ if(eve_next.src.includes(imgPath+"z2/next")&&blok==0){ strona[0]++; usuwanie(2); zmiana(); }}; 
+eve_prev.onclick = function(){ if(eve_prev.src.includes(imgPath+"z2/prev")&&blok==0){ strona[0]--; usuwanie(2); zmiana(); }};
 
 eve_pop=document.createElement("img"); eve_pop.style.pointerEvents="none"; eve_pop.style.position="absolute";
 eve_pop.style.width="100%"; eve_pop.style.height="100%"; eve_pop.style.transition="opacity 1s"; eve_pop.style.opacity=0;
 eve_popbutton=document.createElement("img"); eve_popbutton.id="ign"; eve_popbutton.style.position="absolute";
 eve_popbutton.style.width="125.3px"; eve_popbutton.style.height="107.1px"; eve_popbutton.style.transition="opacity 1s"; eve_popbutton.style.opacity=0;
 eve_popbutton.style.marginLeft="253.4px"; eve_popbutton.style.marginTop="212.8px";
-eve_pop.src="img/z2/popup.png"; eve_popbutton.src="img/z2/ok.png";
+eve_pop.src=imgPath+"z2/popup.png"; eve_popbutton.src=imgPath+"z2/ok.png";
 eve_poptext=document.createElement("p"); eve_poptext.style.position="absolute"; 
 eve_poptext.style.width="151.9px"; eve_poptext.style.height="103.6px"; eve_poptext.style.pointerEvents="none";
 eve_poptext.style.fontSize="12px"; eve_poptext.style.textAlign="center"; eve_poptext.style.color="white";
 eve_poptext.style.marginTop="231px"; eve_poptext.style.marginLeft="51.8px";
 eve_poptext.style.opacity=0; eve_poptext.style.transition="opacity 1s";
-eve_popbutton.onmouseover = function(){ eve_popbutton.src="img/z2/ok_hover.png"; }
-eve_popbutton.onmouseout = function(){ eve_popbutton.src="img/z2/ok.png"; }
-eve_popbutton.onmousedown = function(){ eve_popbutton.src="img/z2/ok_onpress.png"; }
+eve_popbutton.onmouseover = function(){ eve_popbutton.src=imgPath+"z2/ok_hover.png"; }
+eve_popbutton.onmouseout = function(){ eve_popbutton.src=imgPath+"z2/ok.png"; }
+eve_popbutton.onmousedown = function(){ eve_popbutton.src=imgPath+"z2/ok_onpress.png"; }
 eve_popbutton.onmouseup = function(){
-	eve_popbutton.src="img/z2/ok.png"; right.removeChild(eve_pop);
+	eve_popbutton.src=imgPath+"z2/ok.png"; right.removeChild(eve_pop);
 	right.removeChild(eve_popbutton); right.removeChild(eve_poptext);
 	eve_pop.style.opacity=0; eve_popbutton.style.opacity=0; eve_poptext.style.opacity=0;
 	check_popups();
 }
 eve_plakat=document.createElement("img"); eve_plakat.id="ign"; eve_plakat.style.position="absolute";
-eve_plakat.style.width="101.5px"; eve_plakat.style.height="32.2px"; eve_plakat.src="img/z2/free.png";
+eve_plakat.style.width="101.5px"; eve_plakat.style.height="32.2px"; eve_plakat.src=imgPath+"z2/free.png";
 eve_plakat.style.marginLeft="337.4px"; eve_plakat.style.marginTop="441px";
-eve_plakat.onmouseover = function(){ if(blok==0)eve_plakat.src="img/z2/free_hover.png"; }
-eve_plakat.onmouseout = function(){ if(blok==0)eve_plakat.src="img/z2/free.png"; }
+eve_plakat.onmouseover = function(){ if(blok==0)eve_plakat.src=imgPath+"z2/free_hover.png"; }
+eve_plakat.onmouseout = function(){ if(blok==0)eve_plakat.src=imgPath+"z2/free.png"; }
 eve_plakat.onclick = function(){ if(blok==0){ if(nowy_plakat==1){ nowy_plakat=0; right.removeChild(eve_nowy_plakat); }
 	usuwanie(2); eve_zak=2; strona=[1,1]; eve_buy=[-1,-1,-1]; zmiana();}}
-eve_nowy_plakat=document.createElement("img"); eve_nowy_plakat.style.pointerEvents="none"; eve_nowy_plakat.src="img/z2/free_new.png";
+eve_nowy_plakat=document.createElement("img"); eve_nowy_plakat.style.pointerEvents="none"; eve_nowy_plakat.src=imgPath+"z2/free_new.png";
 eve_nowy_plakat.style.position="absolute"; eve_nowy_plakat.style.width="100%"; eve_nowy_plakat.style.height="100%";
 
 eve_back=document.createElement("img"); eve_back.id="ign"; eve_back.style.position="absolute";
-eve_back.style.width="88.2px"; eve_back.style.height="32.2px"; eve_back.src="img/z2/back.png";
+eve_back.style.width="88.2px"; eve_back.style.height="32.2px"; eve_back.src=imgPath+"z2/back.png";
 eve_back.style.marginLeft="351px"; eve_back.style.marginTop="441px";
-eve_back.onmouseover = function(){ if(blok==0)eve_back.src="img/z2/back_hover.png"; }
-eve_back.onmouseout = function(){ if(blok==0)eve_back.src="img/z2/back.png"; }
+eve_back.onmouseover = function(){ if(blok==0)eve_back.src=imgPath+"z2/back_hover.png"; }
+eve_back.onmouseout = function(){ if(blok==0)eve_back.src=imgPath+"z2/back.png"; }
 eve_back.onclick = function(){ if(blok==0){ usuwanie(2); eve_zak=1; strona=[1,1]; eve_buy=[-1,-1,-1]; zmiana();}}
 
 sciana_plakat=document.createElement("img"); sciana_plakat.style.pointerEvents="none"; sciana_plakat.style.position="absolute";
 sciana_plakat.style.width="100%"; sciana_plakat.style.height="100%"; sciana_plakat.style.opacity=0;
-sciana_plakat.style.transition="opacity 1s"; sciana_plakat.src="img/basic/pusty.png"; left.appendChild(sciana_plakat);
+sciana_plakat.style.transition="opacity 1s"; sciana_plakat.src=imgPath+"basic/pusty.png"; left.appendChild(sciana_plakat);
 
 black1=document.createElement("div"); black1.style.position="absolute"; 
 black1.id="ign"; black1.style.backgroundColor="#000000";
 black2=document.createElement("div"); black2.style.position="absolute"; 
 black2.id="ign"; black2.style.backgroundColor="#000000";
 fire=document.createElement("img"); fire.style.position="absolute"; fire.style.pointerEvents="none";
-fire.style.width="100%"; fire.style.height="100%"; fire.src="img/z3/og1.png";
+fire.style.width="100%"; fire.style.height="100%"; fire.src=imgPath+"z3/og1.png";
 
 hakzug_button=document.createElement("img"); hakzug_button.style.position="absolute"; hakzug_button.id="ign";
 hakzug_button.style.height="21px"; hakzug_button.style.marginLeft="40.6px"; hakzug_button2=hakzug_button.cloneNode(true);
 hakzug_button3=hakzug_button.cloneNode(true); hakzug_button.style.marginTop="312.2px"; 
 hakzug_button2.style.marginTop="342.3px"; hakzug_button.style.width="261.8px"; hakzug_button2.style.width="144.9px";
-hakzug_button.src="img/z3/virus.png"; hakzug_button2.src="img/z3/implant.png"; hakzug_button3.style.marginTop="230.3px";
-hakzug_button3.src="img/z3/back.png"; hakzug_button3.style.width="134.4px"; hakzug_button3.style.height="14.7px";
+hakzug_button.src=imgPath+"z3/virus.png"; hakzug_button2.src=imgPath+"z3/implant.png"; hakzug_button3.style.marginTop="230.3px";
+hakzug_button3.src=imgPath+"z3/back.png"; hakzug_button3.style.width="134.4px"; hakzug_button3.style.height="14.7px";
 
 hakzug_balans=document.createElement("p"); hakzug_balans.style.position="absolute"; 
 hakzug_balans.style.width="96.6px"; hakzug_balans.style.height="20px"; hakzug_balans.style.pointerEvents="none";
@@ -309,16 +310,16 @@ function energol(acces, cost, energy, effect, source){
 	this.acces=acces; this.cost=cost; this.energy=energy; this.effect=effect; this.source=source; emo.push([0,0]);
 }
 if(energole.length==0){
-	energole.push(new energol(1,3.99,"15","replenish 15 points of energy","img/z2/chash.png"));
-	energole.push(new energol(1,51.11,"20","replenish 20 points of energy","img/z2/chash.png"));
-	energole.push(new energol(1,2.69,"25","replenish 25 points of energy","img/z2/chash.png"));
-	energole.push(new energol(1,3.30,"0","gives good vibes","img/z2/chash.png"));
-	energole.push(new energol(1,3.99,"15","replenish 15 points of energy","img/z2/chash.png"));
-	energole.push(new energol(1,5.99,"20","replenish 20 points of energy","img/z2/chash.png"));
-	energole.push(new energol(1,2.69,"25","replenish 25 points of energy","img/z2/chash.png"));
-	energole.push(new energol(1,3.30,"0","gives good vibes","img/z2/chash.png"));
-	energole.push(new energol(1,8.30,"50","DAJE KOPA","img/z2/chash.png"));
-	energole.push(new energol(1,8.30,"50","Power","img/z2/chash.png"));
+	energole.push(new energol(1,3.99,"15","replenish 15 points of energy",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,51.11,"20","replenish 20 points of energy",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,2.69,"25","replenish 25 points of energy",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,3.30,"0","gives good vibes",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,3.99,"15","replenish 15 points of energy",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,5.99,"20","replenish 20 points of energy",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,2.69,"25","replenish 25 points of energy",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,3.30,"0","gives good vibes",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,8.30,"50","DAJE KOPA",imgPath+"z2/chash.png"));
+	energole.push(new energol(1,8.30,"50","Power",imgPath+"z2/chash.png"));
 }
 
 function popup(acces, peak, info){
@@ -331,19 +332,19 @@ function plakat(acces, source, effect, wall){
 	this.acces=acces; this.source=source; this.effect=effect; this.wall=wall;
 }
 if(plakaty.length==0){
-	plakaty.push(new plakat(0,"img/z2/ufo.png","none","img/plakaty/ufo.png"));
+	plakaty.push(new plakat(0,imgPath+"z2/ufo.png","none",imgPath+"plakaty/ufo.png"));
 }
 
 function wirus(acces, cost, number, effect, source){
 	this.acces=acces; this.cost=cost; this.number=number; this.effect=effect; this.source=source;
 }
 if(wirusy.length==0){
-	wirusy.push(new wirus(1,29.99,"20%","replenish 15 points of energy","img/z3/chash20.png"));
-	wirusy.push(new wirus(1,19.99,"20%","replenish 15 points of energy","img/z3/chash20.png"));
-	wirusy.push(new wirus(1,29.99,"20%","replenish 15 points of energy","img/z3/chash20.png"));
-	wirusy.push(new wirus(1,19.99,"20%","replenish 15 points of energy","img/z3/chash20.png"));
-	wirusy.push(new wirus(1,29.99,"20%","replenish 15 points of energy","img/z3/chash20.png"));
-	wirusy.push(new wirus(1,19.99,"20%","replenish 15 points of energy","img/z3/chash20.png"));
+	wirusy.push(new wirus(1,29.99,"20%","replenish 15 points of energy",imgPath+"z3/chash20.png"));
+	wirusy.push(new wirus(1,19.99,"20%","replenish 15 points of energy",imgPath+"z3/chash20.png"));
+	wirusy.push(new wirus(1,29.99,"20%","replenish 15 points of energy",imgPath+"z3/chash20.png"));
+	wirusy.push(new wirus(1,19.99,"20%","replenish 15 points of energy",imgPath+"z3/chash20.png"));
+	wirusy.push(new wirus(1,29.99,"20%","replenish 15 points of energy",imgPath+"z3/chash20.png"));
+	wirusy.push(new wirus(1,19.99,"20%","replenish 15 points of energy",imgPath+"z3/chash20.png"));
 }
 
 zak=1; zmiana();
@@ -360,7 +361,7 @@ function zmiana(){
 		machanie=setInterval(machaj,110); kot_j=0; kot_i=1;
 		function machaj(){
 			kot_i=(kot_i)%6+1;
-			kot.src="img/kot/"+kot_i+".png";
+			kot.src=imgPath+"kot/"+kot_i+".png";
 		}
 		
 		jem=[0,1]; kot_je=[0,0];
@@ -378,7 +379,7 @@ function zmiana(){
 					right.appendChild(puszka);
 					wysypywanie=setInterval(wysyp,ile_wysyp);
 					if(kot_je[0]==0&&karma_h<420){
-						kot_je[0]=1; kot.src="img/kot/_2.png"; kot_amu.src="img/kot/_1.png";
+						kot_je[0]=1; kot.src=imgPath+"kot/_2.png"; kot_amu.src=imgPath+"kot/_1.png";
 						kot_je[1]=0; clearInterval(machanie); wcinanie=setInterval(wcinaj,ile_wcinaj); 
 					}
 				}
@@ -388,7 +389,7 @@ function zmiana(){
 		function wcinaj(){
 			if(zak==1){
 				if(karma_h>=437.5){
-					clearInterval(wcinanie); kot.src="img/kot/1.png"; machanie=setInterval(machaj,110); kot_je[0]=0; kot_amu.src="img/basic/pusty.png";
+					clearInterval(wcinanie); kot.src=imgPath+"kot/1.png"; machanie=setInterval(machaj,110); kot_je[0]=0; kot_amu.src=imgPath+"basic/pusty.png";
 				}else{
 					if(kot_je[1]==0){ kot_amu.style.marginTop="58%"; kot_je[1]=1;
 					}else{ kot_amu.style.marginTop="56%"; kot_je[1]=0; }
@@ -399,12 +400,12 @@ function zmiana(){
 		
 		function wysyp(){
 			if(zak==1){
-				if(jem[1]<12){ jem[1]++; puszka.src="img/puszka/"+jem[1]+".png";
+				if(jem[1]<12){ jem[1]++; puszka.src=imgPath+"puszka/"+jem[1]+".png";
 				}else{ jem=[0,1]; clearInterval(wysypywanie); right.removeChild(puszka); }
 			}
 		}
 	}else if(zak==2){
-		atlo.style.backgroundImage="url(img/z2/tlo.png)"; right.appendChild(atlo);
+		atlo.style.backgroundImage="url("+imgPath+"z2/tlo.png)"; right.appendChild(atlo);
 		right.appendChild(eve_balans); eve_balans.innerHTML=balans+"$";
 		right.appendChild(eve_next); right.appendChild(eve_prev); ile_stron=0;
 		if(eve_zak==1){
@@ -417,17 +418,17 @@ function zmiana(){
 		}
 		strona[1]=Math.ceil(ile_stron/3);
 		everugi(strona[0]);
-		if(strona[0]<strona[1]) eve_next.src="img/z2/next.png"; else eve_next.src="img/basic/pusty.png";
-		if(strona[0]>1) eve_prev.src="img/z2/prev.png"; else eve_prev.src="img/basic/pusty.png";
+		if(strona[0]<strona[1]) eve_next.src=imgPath+"z2/next.png"; else eve_next.src=imgPath+"basic/pusty.png";
+		if(strona[0]>1) eve_prev.src=imgPath+"z2/prev.png"; else eve_prev.src=imgPath+"basic/pusty.png";
 		
 		bu1.onmousedown = function(){
 			if(bu1.src.includes("z2/buy")&&eve_buy[0]!=-1&&blok==0){
-				if(energole[eve_buy[0]].cost<=balans) bu1.src="img/z2/buy_yes.png"; else bu1.src="img/z2/buy_no.png";
+				if(energole[eve_buy[0]].cost<=balans) bu1.src=imgPath+"z2/buy_yes.png"; else bu1.src=imgPath+"z2/buy_no.png";
 			}
 		}
 		bu1.onmouseup = function(){
 			if(bu1.src.includes("z2/buy")&&eve_buy[0]!=-1&&blok==0){
-				bu1.src="img/z2/buy.png";
+				bu1.src=imgPath+"z2/buy.png";
 				if(energole[eve_buy[0]].cost<=balans){
 					balans=(balans-energole[eve_buy[0]].cost).toFixed(2);
 					balans_wydany=(parseFloat(balans_wydany)+energole[eve_buy[0]].cost).toFixed(2);
@@ -444,12 +445,12 @@ function zmiana(){
 		}
 		bu2.onmousedown = function(){
 			if(bu2.src.includes("z2/buy")&&eve_buy[1]!=-1&&blok==0){
-				if(energole[eve_buy[1]].cost<=balans) bu2.src="img/z2/buy_yes.png"; else bu2.src="img/z2/buy_no.png";
+				if(energole[eve_buy[1]].cost<=balans) bu2.src=imgPath+"z2/buy_yes.png"; else bu2.src=imgPath+"z2/buy_no.png";
 			}
 		}
 		bu2.onmouseup = function(){
 			if(bu2.src.includes("z2/buy")&&eve_buy[1]!=-1&&blok==0){
-				bu2.src="img/z2/buy.png";
+				bu2.src=imgPath+"z2/buy.png";
 				if(energole[eve_buy[1]].cost<=balans){
 					balans=(balans-energole[eve_buy[1]].cost).toFixed(2);
 					balans_wydany=(parseFloat(balans_wydany)+energole[eve_buy[1]].cost).toFixed(2);
@@ -466,12 +467,12 @@ function zmiana(){
 		}
 		bu3.onmousedown = function(){
 			if(bu3.src.includes("z2/buy")&&eve_buy[2]!=-1&&blok==0){
-				if(energole[eve_buy[2]].cost<=balans) bu3.src="img/z2/buy_yes.png"; else bu3.src="img/z2/buy_no.png";
+				if(energole[eve_buy[2]].cost<=balans) bu3.src=imgPath+"z2/buy_yes.png"; else bu3.src=imgPath+"z2/buy_no.png";
 			}
 		}
 		bu3.onmouseup = function(){
 			if(bu3.src.includes("z2/buy")&&eve_buy[2]!=-1&&blok==0){
-				bu3.src="img/z2/buy.png";
+				bu3.src=imgPath+"z2/buy.png";
 				if(energole[eve_buy[2]].cost<=balans){
 					balans=(balans-energole[eve_buy[2]].cost).toFixed(2);
 					balans_wydany=(parseFloat(balans_wydany)+energole[eve_buy[2]].cost).toFixed(2);
@@ -511,24 +512,24 @@ function zmiana(){
 		blackowanie=false; 
 		black1.style.width="100%"; black1.style.height="392px"; black1.style.marginTop="112px";
 		black2.style.width="100%"; black2.style.height="19.6px"; black2.style.marginTop="112px";
-		atlo.style.backgroundImage="url(img/z3/tlo.png)"; right.appendChild(atlo); black_h=392; black_m=112;
+		atlo.style.backgroundImage="url("+imgPath+"z3/tlo.png)"; right.appendChild(atlo); black_h=392; black_m=112;
 		if(hakzug_zak==1){
 			firewanie=false; ile_fire=0;
-			atlo2.style.backgroundImage="url(img/z3/tlo1.png)"; right.appendChild(atlo2);
+			atlo2.style.backgroundImage="url("+imgPath+"z3/tlo1.png)"; right.appendChild(atlo2);
 			right.appendChild(fire); firewanie=setInterval(firej, 120);
 			right.appendChild(hakzug_button); right.appendChild(hakzug_button2);
-			hakzug_button.onmousedown = function(){ hakzug_button.src="img/z3/virus_onpress.png" }
-			hakzug_button2.onmousedown = function(){ hakzug_button2.src="img/z3/implant_onpress.png" }
-			hakzug_button.onmouseout = function(){ hakzug_button.src="img/z3/virus.png" }
-			hakzug_button2.onmouseout = function(){ hakzug_button2.src="img/z3/implant.png" }
-			hakzug_button.onmouseup = function(){ usuwanie(3); hakzug_zak=2; zmiana(); hakzug_button.src="img/z3/virus.png" }
-			hakzug_button2.onmouseup = function(){ usuwanie(3); hakzug_zak=3; zmiana(); hakzug_button2.src="img/z3/implant.png" }
+			hakzug_button.onmousedown = function(){ hakzug_button.src=imgPath+"z3/virus_onpress.png" }
+			hakzug_button2.onmousedown = function(){ hakzug_button2.src=imgPath+"z3/implant_onpress.png" }
+			hakzug_button.onmouseout = function(){ hakzug_button.src=imgPath+"z3/virus.png" }
+			hakzug_button2.onmouseout = function(){ hakzug_button2.src=imgPath+"z3/implant.png" }
+			hakzug_button.onmouseup = function(){ usuwanie(3); hakzug_zak=2; zmiana(); hakzug_button.src=imgPath+"z3/virus.png" }
+			hakzug_button2.onmouseup = function(){ usuwanie(3); hakzug_zak=3; zmiana(); hakzug_button2.src=imgPath+"z3/implant.png" }
 			
-			hakzug_button3.onmousedown = function(){ hakzug_button3.src="img/z3/back_onpress.png" }
-			hakzug_button3.onmouseout = function(){ hakzug_button3.src="img/z3/back.png" }
-			hakzug_button3.onmouseup = function(){ usuwanie(3); hakzug_zak=1; zmiana(); hakzug_button3.src="img/z3/back.png"}
+			hakzug_button3.onmousedown = function(){ hakzug_button3.src=imgPath+"z3/back_onpress.png" }
+			hakzug_button3.onmouseout = function(){ hakzug_button3.src=imgPath+"z3/back.png" }
+			hakzug_button3.onmouseup = function(){ usuwanie(3); hakzug_zak=1; zmiana(); hakzug_button3.src=imgPath+"z3/back.png"}
 		}else if(hakzug_zak==2){
-			atlo2.style.backgroundImage="url(img/z3/tlo2.png)"; right.appendChild(atlo2); right.appendChild(hakzug_button3);
+			atlo2.style.backgroundImage="url("+imgPath+"z3/tlo2.png)"; right.appendChild(atlo2); right.appendChild(hakzug_button3);
 			right.appendChild(hakzug_balans); hakzug_balans.innerHTML=balans+"$"; right.appendChild(hakzug_div);
 			for(let i=0;i<wirusy.length;i++){
 				if(wirusy[i].acces==1){
@@ -538,7 +539,7 @@ function zmiana(){
 				}
 			}
 		}else if(hakzug_zak==3){
-			atlo2.style.backgroundImage="url(img/z3/tlo2.png)"; right.appendChild(atlo2); right.appendChild(hakzug_button3);
+			atlo2.style.backgroundImage="url("+imgPath+"z3/tlo2.png)"; right.appendChild(atlo2); right.appendChild(hakzug_button3);
 			right.appendChild(hakzug_balans); hakzug_balans.innerHTML=balans+"$"; right.appendChild(hakzug_div);
 		}
 		right.appendChild(helpline);
@@ -547,7 +548,7 @@ function zmiana(){
 	right.appendChild(helpline_right);
 }
 
-function firej(){ ile_fire++; fire.src="img/z3/og"+(ile_fire%3+1)+".png"; }
+function firej(){ ile_fire++; fire.src=imgPath+"z3/og"+(ile_fire%3+1)+".png"; }
 
 function z3_trans(){
 	if(black_h>19.6&&blackowanie){
@@ -607,7 +608,7 @@ function everugi(str_a){
 
 function usuwanie(dla){
 	if(dla==1){
-		kot.src="img/kot/1.png"; kot_amu.src="img/basic/pusty.png"; 
+		kot.src=imgPath+"kot/1.png"; kot_amu.src=imgPath+"basic/pusty.png"; 
 		right.removeChild(tlo); right.removeChild(kot); right.removeChild(karma); 
 		right.removeChild(tlo_d); right.removeChild(kot_amu); right.removeChild(rec);
 		clearInterval(machanie); clearInterval(miganie); 
@@ -639,18 +640,18 @@ function usuwanie(dla){
 }
 
 poczta=document.createElement("img"); poczta.style.opacity=0; poczta.style.pointerEvents="none";
-poczta.src="img/basic/poczta.png"; poczta.style.width="100%"; poczta.style.height="100%";
+poczta.src=imgPath+"basic/poczta.png"; poczta.style.width="100%"; poczta.style.height="100%";
 poczta.style.position="absolute"; poczta.style.transition="opacity 200ms, margin 1s";
 zgnieciona=document.createElement("img"); zgnieciona.style.opacity=1; zgnieciona.style.pointerEvents="none";
-zgnieciona.src="img/picie/puszka.png"; zgnieciona.style.width="30px"; zgnieciona.style.height="40px";
+zgnieciona.src=imgPath+"picie/puszka.png"; zgnieciona.style.width="30px"; zgnieciona.style.height="40px";
 zgnieciona.style.position="absolute"; zgnieciona.style.transition="margin 0.7s ease-out, opacity 0.5s ease-in, transform 0.8s, height 0.8s linear";
 zgnieciona.style.marginTop="30px"; zgnieciona.style.marginLeft="110px"; 
 function pij(){
-	if(ile_pic<8){ cialo.src="img/picie/"+(ile_pic%4+1)+".png";
-	if(ile_pic==0){ glowa.src="img/basic/pusty.png"; reka.style.visibility="hidden"; poczta.style.opacity=1; poczta.style.marginTop="-10px"}
-	}else if(ile_pic<24){ cialo.src="img/picie/"+(ile_pic+1)+".png"; if(ile_pic<16){ poczta.style.opacity=0 }
-	}else if(ile_pic<27){ cialo.src="img/picie/24.png";
-	}else if(ile_pic<31){ cialo.src="img/picie/"+(ile_pic-2)+".png";
+	if(ile_pic<8){ cialo.src=imgPath+"picie/"+(ile_pic%4+1)+".png";
+	if(ile_pic==0){ glowa.src=imgPath+"basic/pusty.png"; reka.style.visibility="hidden"; poczta.style.opacity=1; poczta.style.marginTop="-10px"}
+	}else if(ile_pic<24){ cialo.src=imgPath+"picie/"+(ile_pic+1)+".png"; if(ile_pic<16){ poczta.style.opacity=0 }
+	}else if(ile_pic<27){ cialo.src=imgPath+"picie/24.png";
+	}else if(ile_pic<31){ cialo.src=imgPath+"picie/"+(ile_pic-2)+".png";
 	if(ile_pic==27){left.appendChild(zgnieciona); setTimeout(function(){ zgnieciona.style.marginLeft="400px"; zgnieciona.style.marginTop="0px";
 	zgnieciona.style.opacity=0; zgnieciona.style.transform="rotate(360deg)"; zgnieciona.style.height="10px";}, 5); }
 	}else if(ile_pic>34){
@@ -683,7 +684,7 @@ function emo_collection(){
 	for(let i=0;i<emo.length;i++){
 		if(emo[i][0]==1&&emo[i][1]==0){
 			nowe_emo=emo_puszka.cloneNode(true);
-			nowe_emo.src="img/kolekcja/"+i+".png"; left.appendChild(nowe_emo);
+			nowe_emo.src=imgPath+"kolekcja/"+i+".png"; left.appendChild(nowe_emo);
 			setTimeout(function(){ nowe_emo.style.opacity=1; }, 10)
 		}
 	}
@@ -693,17 +694,17 @@ zmeczenie=setInterval(zmecz,ile_energia);
 function zmecz(){ if(blok==0||blok_special==1){ energia[0]--; stan_ciala(); } }
 function stan_ciala(){
 	if(stan!=1&&energia[0]/energia[1]>0.8){
-		stan=1; cialo.src="img/basic/cialo_max.png"; glowa.style.visibility="hidden";
-		reka.style.marginTop="-10px"; reka.src="img/reka_max/1.png"; reka.style.marginLeft="0px"; reka.style.visibility="visible";
+		stan=1; cialo.src=imgPath+"basic/cialo_max.png"; glowa.style.visibility="hidden";
+		reka.style.marginTop="-10px"; reka.src=imgPath+"reka_max/1.png"; reka.style.marginLeft="0px"; reka.style.visibility="visible";
 		if(mruganie){clearInterval(mruganie)}; if(mruganie_a){clearInterval(mruganie_a)}; mruganie=false; mruganie_a=false;
 	}else if(stan!=2&&energia[0]/energia[1]>0.2&&energia[0]/energia[1]<=0.8){
-		stan=2; cialo.src="img/basic/cialo.png"; glowa.style.visibility="visible";
-		glowa.src="img/mruganie/1.png"; reka.src="img/reka/1.png"; reka.style.marginLeft="-2px"; reka.style.visibility="visible";
+		stan=2; cialo.src=imgPath+"basic/cialo.png"; glowa.style.visibility="visible";
+		glowa.src=imgPath+"mruganie/1.png"; reka.src=imgPath+"reka/1.png"; reka.style.marginLeft="-2px"; reka.style.visibility="visible";
 		if(mruganie){clearInterval(mruganie)}; if(mruganie_a){clearInterval(mruganie_a)}; mruganie_a=false;
 		mruganie=setInterval(mrugaj, 4000); m_i=1;
 	}else if(stan!=3&&energia[0]/energia[1]<=0.2){
-		stan=3; cialo.src="img/basic/cialo_min.png"; glowa.style.visibility="visible";
-		glowa.src="img/mruganie_min/1.png"; reka.src="img/reka_min/1.png"; reka.style.marginLeft="0px"; reka.style.visibility="visible";
+		stan=3; cialo.src=imgPath+"basic/cialo_min.png"; glowa.style.visibility="visible";
+		glowa.src=imgPath+"mruganie_min/1.png"; reka.src=imgPath+"reka_min/1.png"; reka.style.marginLeft="0px"; reka.style.visibility="visible";
 		if(mruganie){clearInterval(mruganie)}; if(mruganie_a){clearInterval(mruganie_a)}; mruganie_a=false;
 		mruganie=setInterval(mrugaj_min, 3500); m_i=1;
 	}
