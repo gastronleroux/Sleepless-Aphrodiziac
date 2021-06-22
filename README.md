@@ -2,6 +2,10 @@
 
 Unfinished game project written in Javascript.
 
+## Live preview
+
+You can access the live preview version of the project [here](https://gastronleroux.github.io/Sleepless-Aphrodiziac/).
+
 ## Installation and Setup Instructions
 
 1. Clone the repository.
