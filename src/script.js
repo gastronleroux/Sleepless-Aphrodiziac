@@ -684,7 +684,7 @@ function emo_collection(){
 	for(let i=0;i<emo.length;i++){
 		if(emo[i][0]==1&&emo[i][1]==0){
 			nowe_emo=emo_puszka.cloneNode(true);
-			nowe_emo.src=imgPath+"kolekcja/"+i+".png"; left.appendChild(nowe_emo);
+			nowe_emo.src=imgPath+"kolekcja/"+0+".png"; left.appendChild(nowe_emo);
 			setTimeout(function(){ nowe_emo.style.opacity=1; }, 10)
 		}
 	}
